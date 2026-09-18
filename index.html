@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Planair Viagens - Bate Cartão</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="ticket-container">
+    
+    <!-- Cabeçalho estilo passagem aérea -->
+    <div class="ticket-header">
+      <h2>✈️ PLANAIR</h2>
+      <p>BOARDING PASS / PONTO</p>
+    </div>
+
+    <form id="pontoForm">
+      
+      <!-- Informações do Passageiro/Funcionário -->
+      <div class="form-section">
+        <label for="nome">NOME DO TRIPULANTE</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome..." required>
+      </div>
+
+      <div class="divider">
+        <span>SELECIONE O DESTINO (AÇÃO)</span>
+      </div>
+
+      <!-- Opções de Ponto (Radio Buttons customizados) -->
+      <div class="action-options">
+        <input type="radio" id="entrada" name="tipo_registro" value="Entrada" checked>
+        <label for="entrada">🛫 Entrada</label>
+
+        <input type="radio" id="saida_almoco" name="tipo_registro" value="Saída Almoço">
+        <label for="saida_almoco">🍔 Saída Almoço</label>
+
+        <input type="radio" id="retorno_almoco" name="tipo_registro" value="Retorno Almoço">
+        <label for="retorno_almoco">🔄 Volta Almoço</label>
+
+        <input type="radio" id="saida_final" name="tipo_registro" value="Saída">
+        <label for="saida_final">🛬 Saída Final</label>
+      </div>
+
+      <!-- Botão de Envio Principal -->
+      <button type="submit" class="btn-boarding">REGISTRAR AGORA</button>
+    </form>
+
+    <div id="statusMsg"></div>
+    
+    <!-- Rodapé decorativo com código de barras falso -->
+    <div class="barcode">
+      ||| ||||| || |||| ||| ||||| || ||||
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+:root {
+  --azul-planair: #003366; /* Azul escuro corporativo/aviação */
+  --azul-claro: #005bb5;
+  --preto: #1a1a1a;
+  --branco: #ffffff;
+  --cinza-fundo: #eef2f5;
+  --cinza-borda: #d1d8dd;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Fonte limpa de aeroporto */
+}
+
+body {
+  background-color: var(--cinza-fundo);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 15px;
+  color: var(--preto);
+}
+
+/* Container imitando um cartão de embarque */
+.ticket-container {
+  background-color: var(--branco);
+  width: 100%;
+  max-width: 380px; /* Tamanho ideal para celular */
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+  border-top: 8px solid var(--azul-planair);
+}
+
+.ticket-header {
+  background-color: var(--branco);
+  text-align: center;
+  padding: 25px 20px 15px;
+  border-bottom: 2px dashed var(--cinza-borda);
+}
+
+.ticket-header h2 {
+  color: var(--azul-planair);
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.ticket-header p {
+  font-size: 11px;
+  color: #777;
+  letter-spacing: 1.5px;
+}
+
+form {
+  padding: 20px;
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+.form-section label {
+  display: block;
+  font-size: 10px;
+  color: #777;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.form-section input[type="text"] {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 2px solid var(--preto);
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--preto);
+  background: transparent;
+  transition: border-color 0.3s;
+}
+
+.form-section input[type="text"]:focus {
+  outline: none;
+  border-bottom-color: var(--azul-planair);
+}
+
+.divider {
+  text-align: center;
+  margin: 15px 0;
+  position: relative;
+}
+
+.divider span {
+  font-size: 10px;
+  color: #777;
+  background: var(--branco);
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--cinza-borda);
+  z-index: 0;
+}
+
+/* Estilo dos botões de seleção (Radio oculto) */
+.action-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.action-options input[type="radio"] {
+  display: none;
+}
+
+.action-options label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cinza-fundo);
+  border: 1px solid var(--cinza-borda);
+  border-radius: 8px;
+  padding: 15px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  color: var(--preto);
+}
+
+.action-options input[type="radio"]:checked + label {
+  background-color: var(--azul-planair);
+  color: var(--branco);
+  border-color: var(--azul-planair);
+  box-shadow: 0 4px 10px rgba(0, 51, 102, 0.3);
+}
+
+/* Botão de Enviar Principal */
+.btn-boarding {
+  width: 100%;
+  background-color: var(--preto);
+  color: var(--branco);
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-boarding:hover {
+  background-color: #333;
+}
+
+#statusMsg {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Código de Barras Falso no Rodapé */
+.barcode {
+  background-color: var(--branco);
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  color: var(--preto);
+  padding: 15px 0 25px 0;
+}
