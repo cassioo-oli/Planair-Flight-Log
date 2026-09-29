@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Planair Ponto</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<header>
+			<div class="brand">✈ <span>Planair</span> Ponto</div>
+			<nav>
+				<button data-view="ponto" class="active">Meu ponto</button>
+				<button data-view="admin">Administração</button>
+			</nav>
+		</header>
+		<main>
+			<section id="ponto" class="view">
+				<div class="hero">
+					<p>CONTROLE DE JORNADA</p>
+					<h1>Olá, vamos voar bem hoje?</h1>
+					<label>Selecione seu nome <select id="funcionario"></select></label>
+				</div>
+				<div class="grid">
+					<article class="card">
+						<h2>Registro de hoje</h2>
+						<div id="status">Selecione o funcionário.</div>
+						<button id="bater" class="primary">Bater ponto</button>
+						<a id="pdf" class="link" target="_blank">Baixar espelho em PDF</a>
+					</article>
+					<article class="card">
+						<h2>Falta por justificativa</h2>
+						<p>Envie uma observação e o comprovante médico em PDF para análise.</p>
+						<textarea id="obs" placeholder="Explique o motivo da ausência..."></textarea>
+						<input id="arquivo" type="file" accept="application/pdf">
+						<button id="enviarJust" class="secondary">Enviar justificativa</button>
+					</article>
+				</div>
+			</section>
+			<section id="admin" class="view hidden">
+				<div class="hero">
+					<p>ÁREA RESTRITA</p>
+					<h1>Painel do administrador</h1>
+				</div>
+				<div class="grid">
+					<article class="card">
+						<h2>Novo funcionário</h2>
+						<input id="nome" placeholder="Nome completo">
+						<input id="email" type="email" placeholder="E-mail">
+						<input id="cargo" placeholder="Cargo">
+						<input id="carga" type="number" value="480" min="1">
+						<p>Horários previstos (cada marcação aceita ± 1 h)</p>
+						<input id="entrada" type="time" value="08:00">
+						<input id="saidaAlmoco" type="time" value="12:00">
+						<input id="retornoAlmoco" type="time" value="13:00">
+						<input id="saida" type="time" value="17:00">
+						<button id="cadastrar" class="primary">Cadastrar (minutos/dia)</button>
+					</article>
+					<article class="card">
+						<h2>Ocorrência / ajuste</h2>
+						<select id="ocFuncionario"></select>
+						<input id="ocData" type="date">
+						<textarea id="ocObs" placeholder="Ex.: saída autorizada às 15h por consulta..."></textarea>
+						<button id="salvarOc" class="secondary">Salvar ocorrência</button>
+					</article>
+				</div>
+				<article class="card wide">
+					<h2>Justificativas pendentes</h2>
+					<div id="listaJust">Carregando...</div>
+				</article>
+			</section>
+		</main>
+		<div id="toast"></div>
+		<script src="app.js"></script>
+	</body>
+</html>

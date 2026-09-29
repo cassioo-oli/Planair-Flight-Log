@@ -1,0 +1,7 @@
+# Credenciais e arquivos locais
+.env
+uploads/
+
+# Dependências e arquivos gerados
+node_modules/
+npm-debug.log*
